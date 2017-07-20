@@ -1,0 +1,23 @@
+import java.io.*;
+import java.util.*;
+import java.text.*;
+import java.math.*;
+import java.util.regex.*;
+
+public class Solution {
+
+    public static void main(String[] args) {
+        Scanner in = new Scanner(System.in);
+        int n = in.nextInt();
+        String[] unsorted = new String[n];
+        for(int unsorted_i=0; unsorted_i < n; unsorted_i++){
+            unsorted[unsorted_i] = in.next();
+        }
+        // your code goes here
+        Arrays.sort(unsorted, Comparator.comparingInt(String::length).thenComparing(String.CASE_INSENSITIVE_ORDER));
+        for(int i=0; i < n; i++){
+            System.out.println(unsorted[i]);
+        }
+ 
+    }
+}
